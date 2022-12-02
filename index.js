@@ -24,7 +24,7 @@ async function main() {
         file.writeString(input);
         file.flush();
         
-        await load_module(wasi, "/espresso.wasm");
+        await load_module(wasi, "espresso.wasm");
 
         let exit_code = wasi.start();
         let stdout = wasi.getStdoutString();
