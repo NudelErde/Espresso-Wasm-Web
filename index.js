@@ -52,4 +52,8 @@ async function main() {
 
 }
 
-main();
+main()
+    .catch((err) => {
+        console.error(err);
+        alert('Failed to load Espresso-WASM module');
+    });
