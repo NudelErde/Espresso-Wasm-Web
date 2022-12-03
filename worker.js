@@ -29,7 +29,9 @@ async function executeEspresso(input, args) {
 
   await instantiateModule(wasi, 'espresso.wasm');
 
+  console.debug('Running Espresso...');
   const exitCode = wasi.start();
+  console.debug('Espresso finished with exit code', exitCode);
   return {
     exitCode,
     stdout: wasi.getStdoutString(),
