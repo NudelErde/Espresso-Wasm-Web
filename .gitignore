@@ -1,3 +1,6 @@
-.cache
-node_modules
-bundle.js
+/bundle.js
+
+/.cache/
+/node_modules/
+
+/.idea/
