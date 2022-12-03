@@ -1,17 +1,49 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Cappucino on Web</title>
+    <meta name="description" content="Use Cappucino in your Browser? Idk Nudi mach das bitte :(">
+</head>
 
 <body>
-    <main>
-        <div>
-            <textarea id="input"></textarea>
+    <div class="header"></div>
+
+    <div class="main">
+
+        <div class="grid_container">
+            <div class="inputLabel">
+                <label for="input"><b>Input</b></label>
+            </div>
+            <div class="outputLabel">
+                <label for="output"><b>Output</b></label>
+            </div>
+            <div class="inputL">
+                <textarea id="input"></textarea>
+            </div>
+            <div class="outputR">
+                <textarea id="output" readonly></textarea>
+            </div>
+            <div class="argsLabel">
+                <label for="args"><b>Arguments</b></label>
+            </div>
+            <div></div>
+            <div class="argsL">
+                <textarea id="args"></textarea>
+            </div>
+            <div class="buttonR">
+                <button id="espresso_run"><b>Cappucino</b></button>
+            </div>
         </div>
-        <button id="espresso_run">
-            Espresso
-        </button>
-        <div>
-            <textarea id="output"></textarea>
-        </div>
-    </main>
+    </div>
+
     <script src="./bundle.js" async defer></script>
 </body>
 
