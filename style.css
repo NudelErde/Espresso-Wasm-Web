@@ -31,7 +31,7 @@ body {
 
 /* elements */
 textarea,
-input {
+input[type="text"] {
     width: 100%;
     height: 100%;
     resize: none;
