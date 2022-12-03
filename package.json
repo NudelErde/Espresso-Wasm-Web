@@ -1,17 +1,47 @@
 {
-  
   "name": "espresso-wasm-web",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Runs Espresso heuristic logic minimizer in your browser",
+  "homepage": "https://github.com/NudelErde/Espresso-Wasm-Web#readme",
+  "license": "MIT",
+  "keywords": [],
+  "author": {
+    "name": "Florian Heidenreich",
+    "email": "florian.heidenreich@stud.tu-darmstadt.de",
+    "url": "https://github.com/NudelErde"
+  },
+  "contributors": [
+    {
+      "name": "Christian Koop",
+      "url": "https://github.com/SpraxDev",
+      "email": "contact@sprax2013.de"
+    },
+    {
+      "name": "Jonas",
+      "url": "https://github.com/JNSAPH",
+      "email": "contact@jnsaph.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NudelErde/Espresso-Wasm-Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NudelErde/Espresso-Wasm-Web/issues"
+  },
   "scripts": {
     "build": "browserify index.js -o bundle.js && browserify worker.js -o bundle-worker.js"
   },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "@wasmer/wasi": "^1.2.2",
-    "@wasmer/wasmfs": "^0.12.0",
-    "browserify": "^17.0.0"
+    "@wasmer/wasmfs": "^0.12.0"
   },
-  "author": "",
-  "license": "MIT",
-  "description": ""
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
 }
