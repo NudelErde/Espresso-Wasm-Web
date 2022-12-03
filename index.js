@@ -42,16 +42,17 @@ async function executeEspresso(input, args) {
     worker = new Worker('./bundle-worker.js');
   }
 
-  return new Promise((resolve) => {
-    const workerTask = {input, args};
-    console.log('Sending task to worker:', workerTask);
-    worker.postMessage(workerTask);
+  return new Promise((resolve,reject) => {
+    worker.postMessage({input, args});
 
     worker.addEventListener('message', (event) => {
       workerRunning = false;
 
-      console.log('Received result from worker:', event.data);
       resolve(event.data);
+    }, {once: true, passive: true});
+    worker.addEventListener('error', (event) => {
+      workerRunning = false;
+      reject(event);
     }, {once: true, passive: true});
   });
 }
