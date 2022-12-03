@@ -39,10 +39,10 @@ async function executeEspresso(input, args) {
   }
 
   if (!worker) {
-    worker = new Worker('./bundle-worker.js');
+    worker = new Worker('./bundle-worker.js', {name: 'espresso-runner'});
   }
 
-  return new Promise((resolve,reject) => {
+  return new Promise((resolve, reject) => {
     worker.postMessage({input, args});
 
     worker.addEventListener('message', (event) => {
