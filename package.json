@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "browserify index.js -o bundle.js"
+    "build": "browserify index.js -o bundle.js && browserify worker.js -o bundle-worker.js"
   },
   "dependencies": {
     "@wasmer/wasi": "^1.2.2",
