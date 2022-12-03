@@ -13,7 +13,7 @@ async function get_module(modulename) {
     return wasm;
 }
 
-async function get_instance(wasi, modulename) {   
+async function get_instance(wasi, modulename) {
     const module = await get_module(modulename);
     const instance = await WebAssembly.instantiate(module, wasi.getImports(module));
 
@@ -25,7 +25,7 @@ async function get_instance(wasi, modulename) {
 async function main() {
 
     await init();
-    
+
     document.getElementById("espresso_run").addEventListener("click", async () => {
         const input = document.getElementById("input").value;
         const argsString = document.getElementById("args").value;
@@ -34,11 +34,11 @@ async function main() {
         const userArgs = [...argsString.matchAll(/("[^"\\]*(?:\\[\S\s][^"\\]*)*"|'[^'\\]*(?:\\[\S\s][^'\\]*)*'|\/[^\/\\]*(?:\\[\S\s][^\/\\]*)*\/[gimy]*(?=\s|$)|(?:\\\s|\S)+)/g)].map(m => m[0]);
 
         let wasi = new WASI({env: {}, args: ["espresso", ...userArgs, "/input.esp"]});
-    
+
         let file = wasi.fs.open("/input.esp", {read: true, write: true, create: true});
         file.writeString(input);
         file.flush();
-        
+
         await get_instance(wasi, "espresso.wasm");
 
         let exit_code = wasi.start();
