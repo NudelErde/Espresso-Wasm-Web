@@ -1,4 +1,5 @@
 /bundle.js
+/bundle-worker.js
 
 /.cache/
 /node_modules/
