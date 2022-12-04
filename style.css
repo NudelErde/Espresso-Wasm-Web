@@ -62,6 +62,11 @@ button:active {
 
 footer {
     text-align: center;
+    height: 3rem;
+}
+
+.main {
+    min-height: 100vh;
 }
 
 /* Grid */
