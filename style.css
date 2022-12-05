@@ -22,7 +22,9 @@ body {
     background-color: var(--bg_primary);
     color: var(--t_color);
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 3rem 0 3rem;
+    margin: 0;
+    box-sizing: content-box;
+    padding: 0;
 }
 
 .header {
@@ -44,11 +46,10 @@ input[type="text"] {
 }
 
 button {
-    width: 100%;
+    width: 30%;
     height: 100%;
     border: none;
     background-color: var(--b_primary);
-    border-radius: 10px;
     color: var(--t_color);
 }
 
@@ -63,10 +64,18 @@ button:active {
 footer {
     text-align: center;
     height: 3rem;
+    border-top: 1px solid var(--b_secondary);
 }
 
+a, a:visited{color: #1e8bc3}
+a:hover {color: #239fde}
+a:active {color: #1875a5}
+
 .main {
-    min-height: 100vh;
+    /* Min height calcualted by (100vh - footer height) - body "padding" */
+    /* If someone figures out why i need 22px padding, please tell me */
+    min-height: calc((100vh - 3rem ) - 22px);
+    margin: 0 3rem 0 3rem;
 }
 
 /* Grid */
@@ -75,9 +84,13 @@ footer {
     grid-template-areas:
         'inputLabel outputLabel'
         'inputL outputR'
-        'argsLabel space'
+        'argsLabel empty'
         'argsL buttonR';
     gap: 10px;
+}
+
+.webWorker {
+    grid-area: webWorker;
 }
 
 /* Grid Areas */
@@ -109,9 +122,7 @@ footer {
 
 .buttonR {
     grid-area: buttonR;
-    width: 50%;
 }
-
 /* end of Grid Areas */
 
 /* Mobile Support */
