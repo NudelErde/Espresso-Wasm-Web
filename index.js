@@ -13,7 +13,7 @@ document.getElementById('espresso_run')
         const espressoResult = await executeEspresso(input, userArgs);
         output.value = espressoResult.stdout;
       } catch (err) {
-        output.value = 'Error ' + JSON.stringify(err);
+        output.value = 'Error ' + err;
         throw err;
       }
     }, {passive: true});
