@@ -14,8 +14,7 @@
   "contributors": [
     {
       "name": "Christian Koop",
-      "url": "https://github.com/SpraxDev",
-      "email": "contact@sprax2013.de"
+      "url": "https://github.com/SpraxDev"
     },
     {
       "name": "Jonas",
@@ -34,14 +33,14 @@
     "build": "browserify index.js -o bundle.js && browserify worker.js -o bundle-worker.js"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
   },
   "dependencies": {
     "@wasmer/wasi": "^1.2.2",
     "@wasmer/wasmfs": "^0.12.0"
   },
   "devDependencies": {
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.1"
   }
 }
