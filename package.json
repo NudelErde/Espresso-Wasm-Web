@@ -34,8 +34,8 @@
     "build": "browserify index.js -o bundle.js && browserify worker.js -o bundle-worker.js"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
   },
   "dependencies": {
     "@wasmer/wasi": "^1.2.2",
